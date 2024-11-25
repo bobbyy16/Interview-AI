@@ -30,8 +30,6 @@ const Feedback = ({ params }) => {
       .from(userAnswer)
       .where(eq(userAnswer.mockIdRef, resolvedParams.interviewId))
       .orderBy(userAnswer.id);
-    console.log(userAnswer.mockIdRef);
-    console.log(userAnswer.MockId);
 
     console.log(result);
     setFeedbackList(result);
@@ -49,9 +47,7 @@ const Feedback = ({ params }) => {
           <h2 className="font-bold text-2xl">
             Here is your interview feedback
           </h2>
-          <h2 className="text-primary my-3 text-lg">
-            your overall interview rating :<strong>7/10</strong>
-          </h2>
+
           <h2 className="text-sm text-gray-500">
             Find below interview question with correct answer , Your answer and
             feedback for improvement

@@ -5,12 +5,7 @@ import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 
-const menuItems = [
-  { label: "Dashboard", path: "/dashboard" },
-  { label: "Questions", path: "/dashboard/questions" },
-  { label: "Upgrade", path: "/dashboard/upgrade" },
-  { label: "How it works?", path: "/dashboard/how-it-works" },
-];
+const menuItems = [{ label: "Dashboard", path: "/dashboard" }];
 
 const Header = () => {
   const pathname = usePathname();
@@ -21,7 +16,7 @@ const Header = () => {
         <Image src="/logo.svg" width={45} height={45} alt="logo" priority />
       </Link>
 
-      <ul className="hidden md:flex gap-6">
+      <ul>
         {menuItems.map((item) => (
           <li key={item.path}>
             <Link

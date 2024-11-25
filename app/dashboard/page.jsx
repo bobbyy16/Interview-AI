@@ -1,5 +1,6 @@
 import React from "react";
 import AddNew from "./_components/AddNew";
+import InterviewList from "./_components/InterviewList";
 
 const Dashboard = () => {
   return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 my-5">
         <AddNew />
       </div>
+      <InterviewList />
     </div>
   );
 };
