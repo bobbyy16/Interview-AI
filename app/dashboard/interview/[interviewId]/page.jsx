@@ -9,17 +9,18 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 function MockInterview({ params }) {
+  const resolvedParams = React.use(params);
   const [interviewData, setInterviewData] = useState(null);
   const [webCamEnabled, setWebCamEnabled] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (params && params.interviewId) {
-      const interviewId = params.interviewId;
+    if (resolvedParams && resolvedParams.interviewId) {
+      const interviewId = resolvedParams.interviewId;
       console.log(interviewId + " ok");
       GetInterviewDetails(interviewId);
     }
-  }, [params]);
+  }, [resolvedParams]);
 
   const GetInterviewDetails = async (interviewId) => {
     try {
@@ -93,7 +94,9 @@ function MockInterview({ params }) {
             </>
           )}
           <div className="mt-4 flex justify-center items-center">
-            <Link href={`/dashboard/interview/${params.interviewId}/start`}>
+            <Link
+              href={`/dashboard/interview/${resolvedParams.interviewId}/start`}
+            >
               <Button>Start Interview</Button>
             </Link>
           </div>
