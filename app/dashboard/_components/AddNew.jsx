@@ -64,6 +64,8 @@ const AddNew = () => {
           mockId: MockupInterview.mockId,
         });
 
+      if (response) setOpenDialog(false);
+
       console.log("Inserted ID:", response);
     } else {
       console.log("error");
